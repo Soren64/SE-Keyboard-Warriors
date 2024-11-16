@@ -1,4 +1,4 @@
-# SE-Typing-Game
+# SE-Keyboard Warriors (Name WIP)
 Software Engineering I Project: Education Game 
 
 Our goal is to create a educational game designed for students in the age range of Middle School (10-14 years old).
