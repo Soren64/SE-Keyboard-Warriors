@@ -1,0 +1,248 @@
+[gd_scene load_steps=19 format=3 uid="uid://c2814xt1ribdj"]
+
+[ext_resource type="Script" path="res://assets/levels/level1.gd" id="1_ifjyh"]
+[ext_resource type="Texture2D" uid="uid://ryfhgfit8xuy" path="res://assets/logos_bgs/pxArt.png" id="2_7tfev"]
+[ext_resource type="Texture2D" uid="uid://ct7ncsi84oj6g" path="res://assets/sprites/PEAR02.png" id="2_giwai"]
+[ext_resource type="Script" path="res://enemy.gd" id="3_86ssb"]
+[ext_resource type="Texture2D" uid="uid://mo64wustm58v" path="res://assets/sprites/filled_heart.png" id="4_7i8sx"]
+[ext_resource type="FontFile" uid="uid://cm14aw3iugxpa" path="res://assets/fonts/pixel.ttf" id="5_venns"]
+[ext_resource type="Texture2D" uid="uid://crhe4u3vk6ueg" path="res://assets/sprites/little_guy.png" id="6_qwnqs"]
+[ext_resource type="Script" path="res://game_timer.gd" id="7_f4gu6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tj8g"]
+content_margin_left = 2.0
+content_margin_top = 3.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hq3v"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xk1k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q630u"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtc0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5aphd"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwoqk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ti2ff"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqvxn"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg47o"]
+content_margin_left = 12.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_ifjyh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -200.0
+offset_top = -600.0
+offset_right = 2083.0
+offset_bottom = 1112.0
+texture = ExtResource("2_7tfev")
+
+[node name="EnemyContainer" type="Node2D" parent="."]
+
+[node name="Enemy" type="Sprite2D" parent="EnemyContainer"]
+position = Vector2(1631.68, 787.889)
+scale = Vector2(6.33361, 6.08031)
+texture = ExtResource("2_giwai")
+script = ExtResource("3_86ssb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EnemyContainer/Enemy"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -124.0
+offset_right = -47.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_venns")
+theme_override_font_sizes/normal_font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tj8g")
+bbcode_enabled = true
+text = "[center]placeholder[/center]"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="EnemyContainer/Enemy"]
+offset_left = -176.0
+offset_top = -123.0
+offset_right = -35.0
+offset_bottom = -103.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_venns")
+theme_override_font_sizes/normal_font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_0hq3v")
+bbcode_enabled = true
+text = "[center]Which one doesn't belong?[/center]"
+scroll_active = false
+
+[node name="Choices" type="HBoxContainer" parent="EnemyContainer/Enemy"]
+offset_left = -229.361
+offset_top = -94.0559
+offset_right = 17.6395
+offset_bottom = -61.0559
+theme_override_constants/separation = 20
+
+[node name="AnswerA" type="Button" parent="EnemyContainer/Enemy/Choices"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_venns")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3xk1k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q630u")
+text = "ART"
+
+[node name="AnswerB" type="Button" parent="EnemyContainer/Enemy/Choices"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_venns")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtc0v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5aphd")
+text = "BASKETBALL"
+
+[node name="AnswerC" type="Button" parent="EnemyContainer/Enemy/Choices"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_venns")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gwoqk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ti2ff")
+text = "SOCCER"
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(339, 740)
+scale = Vector2(16.1805, 16.1805)
+texture = ExtResource("6_qwnqs")
+
+[node name="PlayerHealth" type="Sprite2D" parent="Player"]
+position = Vector2(-5.89489, -12.9047)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7i8sx")
+
+[node name="PlayerHealth2" type="Sprite2D" parent="Player"]
+position = Vector2(0.0398402, -12.9045)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7i8sx")
+
+[node name="PlayerHealth3" type="Sprite2D" parent="Player"]
+position = Vector2(6.10511, -12.9047)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_7i8sx")
+
+[node name="GameTimer" type="Node" parent="."]
+script = ExtResource("7_f4gu6")
+
+[node name="Time" type="Label" parent="GameTimer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.5
+offset_top = -154.0
+offset_right = 152.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_venns")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_rqvxn")
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="GameTimer"]
+wait_time = 11.0
+one_shot = true
+autostart = true
+
+[node name="Turn" type="RichTextLabel" parent="."]
+offset_left = 16.0
+offset_top = 984.0
+offset_right = 533.0
+offset_bottom = 1072.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_venns")
+theme_override_font_sizes/normal_font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_jg47o")
+text = "Current Turn: Player"
+scroll_active = false
+
+[connection signal="pressed" from="EnemyContainer/Enemy/Choices/AnswerA" to="." method="_on_answer_a_pressed"]
+[connection signal="pressed" from="EnemyContainer/Enemy/Choices/AnswerB" to="." method="_on_answer_b_pressed"]
+[connection signal="pressed" from="EnemyContainer/Enemy/Choices/AnswerC" to="." method="_on_answer_c_pressed"]
+[connection signal="timeout" from="GameTimer/Timer" to="." method="_on_timer_timeout"]

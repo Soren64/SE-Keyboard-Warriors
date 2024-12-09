@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://c175u264chd48"]
+
+[ext_resource type="PackedScene" uid="uid://bkgcc074n4xrk" path="res://assets/levels/level3.tscn" id="1_jk0t0"]
+[ext_resource type="Script" path="res://assets/levels/level4.gd" id="2_iiwf5"]
+[ext_resource type="Texture2D" uid="uid://ct7ncsi84oj6g" path="res://assets/sprites/PEAR02.png" id="3_6p4rw"]
+
+[node name="Level4" instance=ExtResource("1_jk0t0")]
+script = ExtResource("2_iiwf5")
+
+[node name="Enemy" parent="EnemyContainer" index="0"]
+texture = ExtResource("3_6p4rw")
+
+[node name="RichTextLabel2" parent="EnemyContainer/Enemy" index="1"]
+offset_left = -198.623
+offset_top = -132.066
+offset_right = -38.6229
+offset_bottom = -112.066
+text = "[center]What is part of a human face?[/center]"
+
+[node name="Choices" parent="EnemyContainer/Enemy" index="2"]
+offset_left = -229.411
+offset_top = -105.093
+offset_right = -2.41103
+offset_bottom = -72.0933
+
+[node name="AnswerA" parent="EnemyContainer/Enemy/Choices" index="0"]
+text = "NECK"
+
+[node name="AnswerB" parent="EnemyContainer/Enemy/Choices" index="1"]
+text = "SHOULDERS"
+
+[node name="AnswerC" parent="EnemyContainer/Enemy/Choices" index="2"]
+text = "EYES"
+
+[node name="Enemy2" parent="EnemyContainer" index="1"]
+texture = ExtResource("3_6p4rw")
+
+[node name="RichTextLabel2" parent="EnemyContainer/Enemy2" index="1"]
+text = "[center]What is the name of our galaxy?[/center]"
+
+[node name="Choices" parent="EnemyContainer/Enemy2" index="2"]
+offset_left = -181.185
+offset_right = 89.8148
+
+[node name="AnswerD" parent="EnemyContainer/Enemy2/Choices" index="0"]
+text = "HIDDEN"
+
+[node name="AnswerE" parent="EnemyContainer/Enemy2/Choices" index="1"]
+text = "MILKY WAY"
+
+[node name="AnswerF" parent="EnemyContainer/Enemy2/Choices" index="2"]
+text = "GODZILLA"
+
+[node name="RichTextLabel2" parent="EnemyContainer/Enemy3" index="1"]
+offset_top = -130.51
+offset_right = 39.9212
+offset_bottom = -109.51
+text = "[center]What object is used to call someone?[/center]"
+
+[node name="Choices" parent="EnemyContainer/Enemy3" index="2"]
+offset_top = -104.314
+offset_right = 60.0
+offset_bottom = -71.3137
+
+[node name="AnswerG" parent="EnemyContainer/Enemy3/Choices" index="0"]
+text = "PHONE"
+
+[node name="AnswerH" parent="EnemyContainer/Enemy3/Choices" index="1"]
+text = "COMPUTER"
+
+[node name="AnswerI" parent="EnemyContainer/Enemy3/Choices" index="2"]
+text = "PRINTER"

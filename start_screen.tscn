@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkc5e2jfw6eq0"]
+
+[ext_resource type="Script" path="res://start_screen.gd" id="1_4aet4"]
+[ext_resource type="Texture2D" uid="uid://c88t64h0p0v8i" path="res://assets/logos_bgs/bg.png" id="2_bjaei"]
+[ext_resource type="Texture2D" uid="uid://10w5qxqidofr" path="res://assets/logos_bgs/static_logo.png" id="3_ducf2"]
+[ext_resource type="Texture2D" uid="uid://c0s851auoltgc" path="res://assets/logos_bgs/start.png" id="3_l40r2"]
+[ext_resource type="Texture2D" uid="uid://c46rlwaiki0w5" path="res://assets/logos_bgs/load.png" id="4_msffq"]
+[ext_resource type="Texture2D" uid="uid://cmtfqrtpasvuw" path="res://assets/logos_bgs/exit.png" id="5_deaw2"]
+
+[node name="StartScreen" type="CanvasLayer"]
+script = ExtResource("1_4aet4")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bjaei")
+
+[node name="Buttons" type="VBoxContainer" parent="MainMenu/Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -84.0
+offset_right = 170.0
+offset_bottom = 266.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="StartGame" type="TextureButton" parent="MainMenu/Background/Buttons"]
+custom_minimum_size = Vector2(340, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_l40r2")
+stretch_mode = 0
+
+[node name="LoadGame" type="TextureButton" parent="MainMenu/Background/Buttons"]
+custom_minimum_size = Vector2(340, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_msffq")
+stretch_mode = 0
+
+[node name="ExitGame" type="TextureButton" parent="MainMenu/Background/Buttons"]
+custom_minimum_size = Vector2(340, 100)
+layout_mode = 2
+texture_normal = ExtResource("5_deaw2")
+stretch_mode = 0
+
+[node name="TitleLogo" type="TextureRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_top = 32.0
+offset_right = 640.0
+offset_bottom = 432.0
+grow_horizontal = 2
+texture = ExtResource("3_ducf2")
+
+[connection signal="pressed" from="MainMenu/Background/Buttons/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="MainMenu/Background/Buttons/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="MainMenu/Background/Buttons/ExitGame" to="." method="_on_exit_game_pressed"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfv4gh2sfqjc1"]
+
+[ext_resource type="Script" path="res://lost_screen.gd" id="1_00mc4"]
+[ext_resource type="Texture2D" uid="uid://c88t64h0p0v8i" path="res://assets/logos_bgs/bg.png" id="2_5npy8"]
+[ext_resource type="Texture2D" uid="uid://chocgx5vmcr6p" path="res://assets/logos_bgs/restart.png" id="3_q8a6m"]
+[ext_resource type="Texture2D" uid="uid://dqnlp6e7wm3bo" path="res://assets/logos_bgs/mainmenu.png" id="4_qr308"]
+[ext_resource type="Texture2D" uid="uid://cmtfqrtpasvuw" path="res://assets/logos_bgs/exit.png" id="5_2i4w2"]
+[ext_resource type="Texture2D" uid="uid://c3vh2rfp8q6on" path="res://assets/logos_bgs/gamelost.png" id="6_kctre"]
+
+[node name="LostScreen" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_00mc4")
+
+[node name="LostMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="LostMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5npy8")
+
+[node name="Buttons" type="VBoxContainer" parent="LostMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -1.0
+offset_right = 188.0
+offset_bottom = 349.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Restart" type="TextureButton" parent="LostMenu/Buttons"]
+custom_minimum_size = Vector2(340, 100)
+layout_mode = 2
+texture_normal = ExtResource("3_q8a6m")
+stretch_mode = 0
+
+[node name="MainMenu" type="TextureButton" parent="LostMenu/Buttons"]
+custom_minimum_size = Vector2(340, 100)
+layout_mode = 2
+texture_normal = ExtResource("4_qr308")
+stretch_mode = 0
+
+[node name="ExitGame" type="TextureButton" parent="LostMenu/Buttons"]
+custom_minimum_size = Vector2(340, 100)
+layout_mode = 2
+texture_normal = ExtResource("5_2i4w2")
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="LostMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -457.0
+offset_top = 32.0
+offset_right = 473.0
+offset_bottom = 492.0
+grow_horizontal = 2
+texture = ExtResource("6_kctre")
+
+[connection signal="pressed" from="LostMenu/Buttons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="LostMenu/Buttons/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="LostMenu/Buttons/ExitGame" to="." method="_on_exit_game_pressed"]

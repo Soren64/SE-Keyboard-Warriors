@@ -1,0 +1,176 @@
+[gd_scene load_steps=14 format=3 uid="uid://1rvrom2r7b3l"]
+
+[ext_resource type="PackedScene" uid="uid://c2814xt1ribdj" path="res://assets/levels/level1.tscn" id="1_6tbym"]
+[ext_resource type="Script" path="res://assets/levels/level2.gd" id="2_0fs7k"]
+[ext_resource type="Texture2D" uid="uid://567hddjiv1kl" path="res://assets/sprites/APPLE02.png" id="2_gy3gb"]
+[ext_resource type="Script" path="res://enemy_2.gd" id="3_wdnl0"]
+[ext_resource type="FontFile" uid="uid://cm14aw3iugxpa" path="res://assets/fonts/pixel.ttf" id="4_t1pux"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_davvy"]
+content_margin_left = 2.0
+content_margin_top = 3.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bb4cj"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xk1k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q630u"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtc0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5aphd"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dtq5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2pup"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Level2" instance=ExtResource("1_6tbym")]
+script = ExtResource("2_0fs7k")
+
+[node name="RichTextLabel2" parent="EnemyContainer/Enemy" index="1"]
+offset_left = -187.362
+offset_top = -123.989
+offset_right = -28.3624
+offset_bottom = -103.989
+text = "[center]Which color is called primary?[/center]"
+
+[node name="Choices" parent="EnemyContainer/Enemy" index="2"]
+offset_left = -212.782
+offset_top = -96.6873
+offset_right = -3.78229
+offset_bottom = -63.6873
+
+[node name="AnswerA" parent="EnemyContainer/Enemy/Choices" index="0"]
+text = "BLUE"
+
+[node name="AnswerB" parent="EnemyContainer/Enemy/Choices" index="1"]
+text = "PURPLE"
+
+[node name="AnswerC" parent="EnemyContainer/Enemy/Choices" index="2"]
+text = "BLACK"
+
+[node name="Enemy2" type="Sprite2D" parent="EnemyContainer" index="1"]
+position = Vector2(1264, 656)
+scale = Vector2(6.75, 6.75)
+texture = ExtResource("2_gy3gb")
+script = ExtResource("3_wdnl0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EnemyContainer/Enemy2" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -166.222
+offset_top = -93.1852
+offset_right = 9.77777
+offset_bottom = -135.185
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_t1pux")
+theme_override_font_sizes/normal_font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_davvy")
+bbcode_enabled = true
+text = "[center]The quick brown fox jumps over the lazy dog.[/center]"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="EnemyContainer/Enemy2" index="1"]
+offset_left = -142.519
+offset_top = -92.8889
+offset_right = 48.4818
+offset_bottom = -72.8889
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_t1pux")
+theme_override_font_sizes/normal_font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_bb4cj")
+bbcode_enabled = true
+text = "[center]Quintuple means _____ of something.[/center]"
+scroll_active = false
+
+[node name="Choices" type="HBoxContainer" parent="EnemyContainer/Enemy2" index="2"]
+offset_left = -135.0
+offset_top = -65.5926
+offset_right = 43.0
+offset_bottom = -32.5926
+theme_override_constants/separation = 20
+
+[node name="AnswerD" type="Button" parent="EnemyContainer/Enemy2/Choices" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_t1pux")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3xk1k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q630u")
+text = "THREE"
+
+[node name="AnswerE" type="Button" parent="EnemyContainer/Enemy2/Choices" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_t1pux")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtc0v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5aphd")
+text = "ONE"
+
+[node name="AnswerF" type="Button" parent="EnemyContainer/Enemy2/Choices" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_t1pux")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dtq5d")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b2pup")
+text = "FIVE"
+
+[node name="Timer" parent="GameTimer" index="1"]
+wait_time = 16.0
+
+[connection signal="pressed" from="EnemyContainer/Enemy2/Choices/AnswerD" to="." method="_on_answer_d_pressed"]
+[connection signal="pressed" from="EnemyContainer/Enemy2/Choices/AnswerE" to="." method="_on_answer_e_pressed"]
+[connection signal="pressed" from="EnemyContainer/Enemy2/Choices/AnswerF" to="." method="_on_answer_f_pressed"]

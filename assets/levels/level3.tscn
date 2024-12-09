@@ -1,0 +1,205 @@
+[gd_scene load_steps=15 format=3 uid="uid://bkgcc074n4xrk"]
+
+[ext_resource type="PackedScene" uid="uid://1rvrom2r7b3l" path="res://assets/levels/level2.tscn" id="1_6kmqn"]
+[ext_resource type="Script" path="res://assets/levels/level3.gd" id="2_cl4ds"]
+[ext_resource type="Texture2D" uid="uid://c4vfqu8vrwygp" path="res://assets/sprites/BANANA02.png" id="2_rh2xu"]
+[ext_resource type="FontFile" uid="uid://cm14aw3iugxpa" path="res://assets/fonts/pixel.ttf" id="3_gh76j"]
+[ext_resource type="Texture2D" uid="uid://ce53y14rdlc72" path="res://assets/sprites/BLUEBERRY_01.png" id="4_e7ir0"]
+[ext_resource type="Script" path="res://enemy_3.gd" id="5_1w70o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwd2c"]
+content_margin_left = 2.0
+content_margin_top = 3.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j56li"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3xk1k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q630u"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtc0v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5aphd"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dtq5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2pup"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[node name="Level3" instance=ExtResource("1_6kmqn")]
+script = ExtResource("2_cl4ds")
+
+[node name="Enemy" parent="EnemyContainer" index="0"]
+position = Vector2(1704, 844)
+texture = ExtResource("2_rh2xu")
+
+[node name="RichTextLabel" parent="EnemyContainer/Enemy" index="0"]
+offset_left = -243.147
+offset_top = -132.23
+offset_right = -54.1473
+offset_bottom = -174.23
+
+[node name="RichTextLabel2" parent="EnemyContainer/Enemy" index="1"]
+offset_left = -193.57
+offset_top = -131.737
+offset_right = -34.5705
+offset_bottom = -111.737
+
+[node name="Choices" parent="EnemyContainer/Enemy" index="2"]
+offset_left = -224.201
+offset_top = -106.245
+offset_right = -15.2007
+offset_bottom = -73.2446
+
+[node name="RichTextLabel" parent="EnemyContainer/Enemy2" index="0"]
+offset_left = -168.296
+offset_top = -93.037
+offset_right = 15.7037
+offset_bottom = -135.037
+
+[node name="RichTextLabel2" parent="EnemyContainer/Enemy2" index="1"]
+offset_left = -132.593
+offset_top = -93.037
+offset_right = 38.4074
+offset_bottom = -73.037
+text = "[center]Which country is below the U.S.?[/center]"
+
+[node name="Choices" parent="EnemyContainer/Enemy2" index="2"]
+offset_left = -174.074
+offset_top = -66.8148
+offset_right = 84.9259
+offset_bottom = -33.8148
+
+[node name="AnswerD" parent="EnemyContainer/Enemy2/Choices" index="0"]
+text = "CANADA"
+
+[node name="AnswerE" parent="EnemyContainer/Enemy2/Choices" index="1"]
+text = "MEXICO"
+
+[node name="AnswerF" parent="EnemyContainer/Enemy2/Choices" index="2"]
+text = "AUSTRALIA"
+
+[node name="Enemy3" type="Sprite2D" parent="EnemyContainer" index="2"]
+position = Vector2(1388, 860)
+scale = Vector2(6.375, 6.375)
+texture = ExtResource("4_e7ir0")
+script = ExtResource("5_1w70o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EnemyContainer/Enemy3" index="0"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.314
+offset_top = -130.51
+offset_right = 26.6863
+offset_bottom = -108.51
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_gh76j")
+theme_override_font_sizes/normal_font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_pwd2c")
+bbcode_enabled = true
+text = "[center]The quick brown fox jumps over the lazy dog.[/center]"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="EnemyContainer/Enemy3" index="1"]
+offset_left = -172.078
+offset_top = -128.627
+offset_right = 39.9216
+offset_bottom = -107.627
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_gh76j")
+theme_override_font_sizes/normal_font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_j56li")
+bbcode_enabled = true
+text = "[center]Which is the biggest ocean in the world?[/center]"
+scroll_active = false
+
+[node name="Choices" type="HBoxContainer" parent="EnemyContainer/Enemy3" index="2"]
+offset_left = -192.0
+offset_top = -102.588
+offset_right = 61.0
+offset_bottom = -69.5882
+theme_override_constants/separation = 20
+
+[node name="AnswerG" type="Button" parent="EnemyContainer/Enemy3/Choices" index="0"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gh76j")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3xk1k")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q630u")
+text = "PACIFIC"
+
+[node name="AnswerH" type="Button" parent="EnemyContainer/Enemy3/Choices" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gh76j")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qtc0v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5aphd")
+text = "ATLANTIC"
+
+[node name="AnswerI" type="Button" parent="EnemyContainer/Enemy3/Choices" index="2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gh76j")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dtq5d")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b2pup")
+text = "ARCTIC"
+
+[node name="Timer" parent="GameTimer" index="1"]
+wait_time = 21.0
+
+[connection signal="pressed" from="EnemyContainer/Enemy3/Choices/AnswerG" to="." method="_on_answer_g_pressed"]
+[connection signal="pressed" from="EnemyContainer/Enemy3/Choices/AnswerH" to="." method="_on_answer_h_pressed"]
+[connection signal="pressed" from="EnemyContainer/Enemy3/Choices/AnswerI" to="." method="_on_answer_i_pressed"]
