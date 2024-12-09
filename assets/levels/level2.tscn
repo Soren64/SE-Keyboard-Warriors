@@ -76,6 +76,7 @@ border_color = Color(0, 0, 0, 1)
 script = ExtResource("2_0fs7k")
 
 [node name="RichTextLabel2" parent="EnemyContainer/Enemy" index="1"]
+visible = false
 offset_left = -187.362
 offset_top = -123.989
 offset_right = -28.3624
@@ -107,10 +108,10 @@ script = ExtResource("3_wdnl0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -166.222
-offset_top = -93.1852
-offset_right = 9.77777
-offset_bottom = -135.185
+offset_left = -170.667
+offset_top = -92.8889
+offset_right = 14.3333
+offset_bottom = -134.889
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -118,7 +119,7 @@ theme_override_fonts/normal_font = ExtResource("4_t1pux")
 theme_override_font_sizes/normal_font_size = 11
 theme_override_styles/normal = SubResource("StyleBoxFlat_davvy")
 bbcode_enabled = true
-text = "[center]The quick brown fox jumps over the lazy dog.[/center]"
+text = "[center]placeholder[/center]"
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="EnemyContainer/Enemy2" index="1"]
@@ -135,10 +136,10 @@ text = "[center]Quintuple means _____ of something.[/center]"
 scroll_active = false
 
 [node name="Choices" type="HBoxContainer" parent="EnemyContainer/Enemy2" index="2"]
-offset_left = -135.0
-offset_top = -65.5926
-offset_right = 43.0
-offset_bottom = -32.5926
+offset_left = -137.333
+offset_top = -67.5556
+offset_right = 40.6667
+offset_bottom = -34.5556
 theme_override_constants/separation = 20
 
 [node name="AnswerD" type="Button" parent="EnemyContainer/Enemy2/Choices" index="0"]
@@ -170,6 +171,9 @@ text = "FIVE"
 
 [node name="Timer" parent="GameTimer" index="1"]
 wait_time = 16.0
+
+[node name="Turn" parent="." index="4"]
+offset_right = 568.0
 
 [connection signal="pressed" from="EnemyContainer/Enemy2/Choices/AnswerD" to="." method="_on_answer_d_pressed"]
 [connection signal="pressed" from="EnemyContainer/Enemy2/Choices/AnswerE" to="." method="_on_answer_e_pressed"]

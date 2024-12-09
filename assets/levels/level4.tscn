@@ -11,6 +11,7 @@ script = ExtResource("2_iiwf5")
 texture = ExtResource("3_6p4rw")
 
 [node name="RichTextLabel2" parent="EnemyContainer/Enemy" index="1"]
+visible = true
 offset_left = -198.623
 offset_top = -132.066
 offset_right = -38.6229
@@ -34,6 +35,9 @@ text = "EYES"
 
 [node name="Enemy2" parent="EnemyContainer" index="1"]
 texture = ExtResource("3_6p4rw")
+
+[node name="RichTextLabel" parent="EnemyContainer/Enemy2" index="0"]
+text = "[center]The quick brown fox jumps over the lazy dog.[/center]"
 
 [node name="RichTextLabel2" parent="EnemyContainer/Enemy2" index="1"]
 text = "[center]What is the name of our galaxy?[/center]"
@@ -70,3 +74,6 @@ text = "COMPUTER"
 
 [node name="AnswerI" parent="EnemyContainer/Enemy3/Choices" index="2"]
 text = "PRINTER"
+
+[node name="Turn" parent="." index="4"]
+offset_right = 560.0

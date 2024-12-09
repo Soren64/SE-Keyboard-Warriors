@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var enemy_container = $EnemyContainer
 @onready var currTurn = $Turn
-@onready var enemy = $EnemyContainr/Enemy
+@onready var enemy1 = $EnemyContainer/Enemy
 @onready var enemy2 = $EnemyContainer/Enemy2
 @onready var enemy3 = $EnemyContainer/Enemy3
 @onready var enemy2_txt = $EnemyContainer/Enemy2/RichTextLabel
@@ -95,12 +95,12 @@ func _on_timer_timeout() -> void:
 		
 	if enemyTurn == true:
 		current_letter_index = -1
-		if is_instance_valid(enemy) == false && is_instance_valid(enemy2) == true:
+		if is_instance_valid(enemy1) == false && is_instance_valid(enemy2) == true:
 			enemy2.reset_prompt()
 		elif is_instance_valid(enemy2) == false && is_instance_valid(enemy3) == true:
 			enemy3.reset_prompt()
 		else:
-			enemy.reset_prompt()
+			enemy1.reset_prompt()
 		
 		if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false \
 		&& is_instance_valid(vocabQ2) == true && is_instance_valid(choices2) == true:
@@ -118,7 +118,12 @@ func _on_timer_timeout() -> void:
 			prompt_txt.hide()
 		enemyTurn = false
 		playerTurn = true
-		currTurn.text = "Current Turn: Enemy"
+		if is_instance_valid(enemy1) == false && is_instance_valid(enemy2) == true:
+			currTurn.text = "Current Turn: Enemy 2"
+		elif is_instance_valid(enemy2) == false && is_instance_valid(enemy3) == true:
+			currTurn.text = "Current Turn: Enemy 3"
+		else:
+			currTurn.text = "Current Turn: Enemy"
 
 func _on_answer_a_pressed() -> void:
 	playerHealth -= 1

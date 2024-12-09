@@ -15,3 +15,6 @@ func _on_continue_pressed() -> void:
 	get_tree().change_scene_to_file(nextLvl_path)
 	get_tree().paused = false
 	hide()
+
+func _on_exit_game_pressed() -> void:
+	get_tree().quit()

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var enemy_container = $EnemyContainer
 @onready var currTurn = $Turn
-@onready var enemy = $EnemyContainr/Enemy
+@onready var enemy1 = $EnemyContainer/Enemy
 @onready var enemy2 = $EnemyContainer/Enemy2
 @onready var enemy2_txt = $EnemyContainer/Enemy2/RichTextLabel
 @onready var prompt_txt = $EnemyContainer/Enemy/RichTextLabel
@@ -89,10 +89,10 @@ func _on_timer_timeout() -> void:
 		
 	if enemyTurn == true:
 		current_letter_index = -1
-		if is_instance_valid(enemy) == false:
+		if is_instance_valid(enemy1) == false:
 			enemy2.reset_prompt()
 		else:
-			enemy.reset_prompt()
+			enemy1.reset_prompt()
 		
 		if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:
 			vocabQ2.show()
@@ -104,7 +104,10 @@ func _on_timer_timeout() -> void:
 			prompt_txt.hide()
 		enemyTurn = false
 		playerTurn = true
-		currTurn.text = "Current Turn: Enemy"
+		if is_instance_valid(enemy1) == false:
+			currTurn.text = "Current Turn: Enemy 2"
+		else:
+			currTurn.text = "Current Turn: Enemy"
 
 func _on_answer_a_pressed() -> void:
 	if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:

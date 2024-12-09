@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var enemy_container = $EnemyContainer
 @onready var currTurn = $Turn
-@onready var enemy = $EnemyContainer/Enemy
+@onready var enemy1 = $EnemyContainer/Enemy
 @onready var enemy2 = $EnemyContainer/Enemy2
 @onready var enemy3 = $EnemyContainer/Enemy3
 @onready var enemy4 = $EnemyContainer/Enemy4
@@ -101,14 +101,14 @@ func _on_timer_timeout() -> void:
 		
 	if enemyTurn == true:
 		current_letter_index = -1
-		if is_instance_valid(enemy) == false && is_instance_valid(enemy2) == true:
+		if is_instance_valid(enemy1) == false && is_instance_valid(enemy2) == true:
 			enemy2.reset_prompt()
 		elif is_instance_valid(enemy2) == false && is_instance_valid(enemy3) == true:
 			enemy3.reset_prompt()
 		elif is_instance_valid(enemy3) == false && is_instance_valid(enemy4) == true:
 			enemy4.reset_prompt()
 		else:
-			enemy.reset_prompt()
+			enemy1.reset_prompt()
 			
 		if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false \
 		&& is_instance_valid(vocabQ2) == true && is_instance_valid(choices2) == true:
@@ -131,7 +131,14 @@ func _on_timer_timeout() -> void:
 			prompt_txt.hide()
 		enemyTurn = false
 		playerTurn = true
-		currTurn.text = "Current Turn: Enemy"
+		if is_instance_valid(enemy1) == false && is_instance_valid(enemy2) == true:
+			currTurn.text = "Current Turn: Enemy 2"
+		elif is_instance_valid(enemy2) == false && is_instance_valid(enemy3) == true:
+			currTurn.text = "Current Turn: Enemy 3"
+		elif is_instance_valid(enemy3) == false && is_instance_valid(enemy4) == true:
+			currTurn.text = "Current Turn: Enemy 4"
+		else:
+			currTurn.text = "Current Turn: Enemy"
 
 func _on_answer_a_pressed() -> void:
 	playerHealth -= 1
@@ -240,22 +247,48 @@ func _on_answer_c_pressed() -> void:
 		get_tree().paused = true
 
 func _on_answer_d_pressed() -> void:
-	if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:
-		vocabQ2.hide()
-		choices2.hide()
-		prompt_txt2.show()
-	elif is_instance_valid(vocabQ2) == false && is_instance_valid(choices2) == false:
-		vocabQ3.hide()
-		choices3.hide()
-		prompt_txt3.show()
-	else:
-		vocabQ.hide()
-		choices.hide()
-		prompt_txt.show()
-	timeReset.start()
-	playerTurn = false
-	enemyTurn = true
-	currTurn.text = "Current Turn: Player"
+	playerHealth -= 1
+	
+	if playerHealth == 2:
+		pHp1.texture = emptyHp
+		if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:
+			vocabQ2.hide()
+			choices2.hide()
+			prompt_txt2.show()
+		elif is_instance_valid(vocabQ2) == false && is_instance_valid(choices2) == false:
+			vocabQ3.hide()
+			choices3.hide()
+			prompt_txt3.show()
+		else:
+			vocabQ.hide()
+			choices.hide()
+			prompt_txt.show()
+		timeReset.start()
+		playerTurn = false
+		enemyTurn = true
+		currTurn.text = "Current Turn: Player"
+	if playerHealth == 1:
+		pHp2.texture = emptyHp
+		if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:
+			vocabQ2.hide()
+			choices2.hide()
+			prompt_txt2.show()
+		elif is_instance_valid(vocabQ2) == false && is_instance_valid(choices2) == false:
+			vocabQ3.hide()
+			choices3.hide()
+			prompt_txt3.show()
+		else:
+			vocabQ.hide()
+			choices.hide()
+			prompt_txt.show()
+		timeReset.start()
+		playerTurn = false
+		enemyTurn = true
+		currTurn.text = "Current Turn: Player"
+	if playerHealth == 0:
+		pHp3.texture = emptyHp
+		LostScreen.show()
+		get_tree().paused = true
 
 func _on_answer_e_pressed() -> void:
 	playerHealth -= 1
@@ -302,48 +335,22 @@ func _on_answer_e_pressed() -> void:
 		get_tree().paused = true
 
 func _on_answer_f_pressed() -> void:
-	playerHealth -= 1
-	
-	if playerHealth == 2:
-		pHp1.texture = emptyHp
-		if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:
-			vocabQ2.hide()
-			choices2.hide()
-			prompt_txt2.show()
-		elif is_instance_valid(vocabQ2) == false && is_instance_valid(choices2) == false:
-			vocabQ3.hide()
-			choices3.hide()
-			prompt_txt3.show()
-		else:
-			vocabQ.hide()
-			choices.hide()
-			prompt_txt.show()
-		timeReset.start()
-		playerTurn = false
-		enemyTurn = true
-		currTurn.text = "Current Turn: Player"
-	if playerHealth == 1:
-		pHp2.texture = emptyHp
-		if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:
-			vocabQ2.hide()
-			choices2.hide()
-			prompt_txt2.show()
-		elif is_instance_valid(vocabQ2) == false && is_instance_valid(choices2) == false:
-			vocabQ3.hide()
-			choices3.hide()
-			prompt_txt3.show()
-		else:
-			vocabQ.hide()
-			choices.hide()
-			prompt_txt.show()
-		timeReset.start()
-		playerTurn = false
-		enemyTurn = true
-		currTurn.text = "Current Turn: Player"
-	if playerHealth == 0:
-		pHp3.texture = emptyHp
-		LostScreen.show()
-		get_tree().paused = true
+	if is_instance_valid(vocabQ) == false && is_instance_valid(choices) == false:
+		vocabQ2.hide()
+		choices2.hide()
+		prompt_txt2.show()
+	elif is_instance_valid(vocabQ2) == false && is_instance_valid(choices2) == false:
+		vocabQ3.hide()
+		choices3.hide()
+		prompt_txt3.show()
+	else:
+		vocabQ.hide()
+		choices.hide()
+		prompt_txt.show()
+	timeReset.start()
+	playerTurn = false
+	enemyTurn = true
+	currTurn.text = "Current Turn: Player"
 
 func _on_answer_g_pressed() -> void:
 	playerHealth -= 1

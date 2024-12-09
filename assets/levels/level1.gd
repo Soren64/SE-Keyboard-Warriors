@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var enemy_container = $EnemyContainer
 @onready var currTurn = $Turn
-@onready var enemy = $EnemyContainer/Enemy
+@onready var enemy1 = $EnemyContainer/Enemy
 @onready var prompt_txt = $EnemyContainer/Enemy/RichTextLabel
 @onready var vocabQ = $EnemyContainer/Enemy/RichTextLabel2
 @onready var choices = $EnemyContainer/Enemy/Choices
@@ -83,7 +83,7 @@ func _on_timer_timeout() -> void:
 	
 	if enemyTurn == true:
 		current_letter_index = -1
-		enemy.reset_prompt()
+		enemy1.reset_prompt()
 		vocabQ.show()
 		choices.show()
 		prompt_txt.hide()

@@ -13,11 +13,11 @@ The game has five screens: the main menu, game screen, win screen, lose screen, 
 There are five levels, so once the player beats the fifth level, they are met with the completed game screen. They can choose to play from the beginning by clicking the "Level 1" button, go back to the main menu, or exit the game. Every level updates the save data corresponding to that level and the player can choose to reload this data if they exit the game and come back.
 
 ## How to run:
-To run the game, download and unzip the archive into a folder. Open the folder and simply click the "KeyboardWarriors.exe" file to play and it will open up the game's window. On the browser version, it can be found on the project website in the "ABOUT" section.
+To run the game, download and unzip the archive into a folder. Open the folder and simply click the "KeyboardWarriors.exe" file to play and it will open up the game's window. On the browser version, it can be found on the project website (https://swe2024keyboardwarriors.netlify.app/) by clicking the "GAME" button. If the game looks off, you might need to zoom in or out to get the resolution properly.
 
 ### Asset Credits:
-- ALL PIXEL SPRITES AND LOGOS BELONG TO: Anthony Simao
+- ALL PIXEL SPRITES, BUTTONS, AND LOGOS BELONG TO: Anthony Simao
 - PIXEL BACKGROUND FOR MENU SCREENS: https://www.shutterstock.com/video/clip-1081888826-pixel-art-game-background-animation-vector-8
-- PIXEL BACKGROUND FOR GAME SCREEN BELONGS TO: Anthony Simao
+- PIXEL BACKGROUND FOR GAME SCREEN (original): https://www.publicdomainpictures.net/en/view-image.php?image=304765&picture=full-supermarket-shelves
 - TYPING INPUT: https://www.youtube.com/playlist?list=PLpwc3ughKbZcJq-Sxew6OippNqlVc924q
 - GDSCRIPT/GODOT: https://docs.godotengine.org/en/stable/classes/index.html

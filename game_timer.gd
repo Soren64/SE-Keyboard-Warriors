@@ -12,5 +12,5 @@ func time_left_in_level():
 	var sec = int(time_left) % 60
 	return [min, sec]
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label.text = "%02d:%02d" % time_left_in_level()
